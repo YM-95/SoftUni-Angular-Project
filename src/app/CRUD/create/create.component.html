@@ -1,0 +1,70 @@
+<body>
+    <div class="container">
+        <header>Create Form</header>
+        <form #myForm="ngForm">
+            <div class="form-group">
+                <input type="text" class="form-control" name="name" [(ngModel)]="model.title" required>
+                <label>Name</label>
+            </div>
+
+            <div class="form-group">
+
+                <input type="text" class="form-control" name="details" [(ngModel)]="model.type" required>
+                <label>Type</label>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="price" [(ngModel)]="model.price" required>
+                <label>Price</label>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="image" [(ngModel)]="model.city" required>
+                <label>City</label>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="image" [(ngModel)]="model.owner" required>
+                <label>Owner</label>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="image" [(ngModel)]="model.bedrooms" required>
+                <label>Bedrooms</label>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="image" [(ngModel)]="model.image" required>
+                <label>Image</label>
+            </div>
+            <!-- <div class="form-group">
+            <label>Subjects</label>
+            <select class="form-control" name="subjects" [(ngModel)]="subjects">
+                <option value="">Choose value</option>
+                <option *ngFor="let subject of Subjects" [value]="subject">
+                    {{subject}}
+                </option>
+            </select>
+        </div> -->
+            <div class="button">
+                <div class="inner"></div>
+                <button>Create</button>
+            </div>
+        </form>
+        <!-- <div class="auth">
+        Or login with
+    </div> -->
+        <!-- <div class="links">
+        <div class="facebook">
+            <i class="fab fa-facebook-square"><span>Facebook</span></i>
+        </div>
+        <div class="google">
+            <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
+                <i class="fab fa-google-plus-square"><span>Google</span></i>
+            </button>
+        </div>
+    </div> -->
+        <!-- <div class="signup">
+        If you allready got account. <a href="/login">Login here</a>
+    </div> -->
+    </div>
+</body>
+
+
+<!-- (ngSubmit)="submit(myForm.value)" -->

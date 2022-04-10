@@ -19,7 +19,9 @@ export const environment = {
 
     appId: "1:295690887140:web:61c522b7960ccb84fcb1f1",
 
-    measurementId: "G-VT2HY6B2Z2"
+    measurementId: "G-VT2HY6B2Z2",
+
+    databaseURL: "https://angular-project-db2d1-default-rtdb.europe-west1.firebasedatabase.app/"
 
   }
 };

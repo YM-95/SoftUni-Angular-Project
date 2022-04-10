@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CRUDService } from '../../CRUD/crud.service'
 
 @Component({
   selector: 'app-home-view',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(public firestore: CRUDService) { }
+
 
   ngOnInit(): void {
+
   }
 
 }

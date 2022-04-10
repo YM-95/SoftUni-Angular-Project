@@ -1,0 +1,132 @@
+<!-- <div class="displayTable">
+    <div class="displayTableCell">
+        <div class="authBlock">
+            <h3>Sign Up</h3>
+            <div class="formGroup">
+                <input type="email" class="formControl" placeholder="Email Address" #userEmail required />
+            </div>
+            <div class="formGroup">
+                <input type="password" class="formControl" placeholder="Password" #userPwd required />
+            </div>
+            <div class="formGroup">
+                <input type="button" class="btn btnPrimary" value="Sign Up"
+                    (click)="authService.SignUp(userEmail.value, userPwd.value)" />
+            </div>
+            <div class="formGroup">
+                <span class="or"><span class="orInner">Or</span></span>
+            </div>
+            Continue with Google
+            <div class="formGroup">
+                <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
+                    <i class="fab fa-google-plus-g"></i>
+                    Continue with Google
+                </button>
+            </div>
+        </div>
+        <div class="redirectToLogin">
+            <span>Already have an account?
+                <span class="redirect" routerLink="/sign-in">Log In</span></span>
+        </div>
+    </div>
+</div> -->
+
+
+
+
+
+
+<body>
+    <div class="container">
+        <header>Register Form</header>
+        <form>
+            <!-- <div class="form-group">
+                <input type="text">
+                <label>Username</label>
+            </div> -->
+            <div class="form-group">
+                <input type="email" #userEmail required>
+                <label>Email</label>
+            </div>
+            <div class="form-group">
+                <input class="pswrd" type="password" #userPassword required>
+                <span class="show">SHOW</span>
+                <label>Password</label>
+            </div>
+            <div class="button">
+                <div class="inner"></div>
+                <button (click)="authService.SignUp(userEmail.value, userPassword.value)">Register</button>
+            </div>
+        </form>
+        <div class="auth">
+            Or login with
+        </div>
+        <div class="links">
+            <div class="facebook">
+                <i class="fab fa-facebook-square"><span>Facebook</span></i>
+            </div>
+            <div class="google">
+                <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
+                    <i class="fab fa-google-plus-square"><span>Google</span></i>
+                </button>
+            </div>
+        </div>
+        <div class="signup">
+            If you allready got account. <a href="/login">Login here</a>
+        </div>
+    </div>
+</body>
+
+<!-- <body>
+    <div class="container">
+        <header>Register Form</header>
+        <form #myForm="ngForm" (ngSubmit)="submit(myForm.value)">
+            <div class="form-group">
+                <input type="text" class="form-control" name="name" [(ngModel)]="model.username" required>
+                <label>Username</label>
+            </div>
+
+            <div class="form-group">
+                <input type="email" class="form-control" name="email" [(ngModel)]="model.email" required>
+                <label>Email</label>
+            </div>
+
+            <div class="form-group">
+                <input type="password" class="form-control" name="password" [(ngModel)]="model.password" required>
+                <label>Password</label>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="repass" [(ngModel)]="model.repass" required>
+                <label>RepeatPassword</label>
+            </div> -->
+<!-- <div class="form-group">
+            <label>Subjects</label>
+            <select class="form-control" name="subjects" [(ngModel)]="subjects">
+                <option value="">Choose value</option>
+                <option *ngFor="let subject of Subjects" [value]="subject">
+                    {{subject}}
+                </option>
+            </select>
+        </div> -->
+<!-- <div class="button">
+                <div class="inner"></div>
+                <button>Register</button>
+            </div>
+        </form>
+        <div class="auth">
+            Or login with
+        </div>
+        <div class="links">
+            <div class="facebook">
+                <i class="fab fa-facebook-square"><span>Facebook</span></i>
+            </div>
+            <div class="google">
+                <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
+                    <i class="fab fa-google-plus-square"><span>Google</span></i>
+                </button>
+            </div>
+        </div>
+        <div class="signup">
+            If you allready got account. <a href="/login">Login here</a>
+        </div>
+    </div>
+</body> -->

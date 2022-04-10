@@ -1,0 +1,57 @@
+<!-- <div class="displayTable">
+    <div class="displayTableCell">
+        <div class="signin">
+            <h3>Sign In</h3>
+            <div class="formGroup">
+
+                <input type="text" class="form-control" placeholder="Email" #userEmail required>
+
+                <div class="formGroup">
+                    <input type="password" class="formControl" placeholder="Password" #userPassword required>
+                </div>
+                Calling SignIn Api from AuthService -->
+<!-- <div class="formGroup">
+                    <button class="btn btn-primary" (click)="authService.SignIn(userEmail.value, userPassword.value)">
+                        Login
+                    </button>
+                </div>
+            </div>
+            <div class="formGroup">
+                <span class="or"><span class="orInner">Or</span></span>
+            </div> -->
+<!-- Calling GoogleAuth Api from AuthService -->
+
+<body>
+    <div class="container">
+        <header>Login Form</header>
+        <form class="signin">
+            <div class="formGroup">
+                <input type="text" #userEmail required>
+                <label>Email</label>
+            </div>
+            <div class="formGroup">
+                <input class="pswrd" type="password" #userPassword required>
+                <span class="show">SHOW</span>
+                <label>Password</label>
+            </div>
+            <div class="button">
+                <div class="inner"></div>
+                <button (click)="authService.SignIn(userEmail.value,userPassword.value)">LOGIN</button>
+            </div>
+        </form>
+        <div class=" auth">
+            Or login with
+        </div>
+        <div class="links">
+            <div class="facebook">
+                <i class="fab fa-facebook-square"><span>Facebook</span></i>
+            </div>
+            <div class="google">
+                <i class="fab fa-google-plus-square"><span>Google</span></i>
+            </div>
+        </div>
+        <div class="signup">
+            Not a member? <a href="/register">Signup now</a>
+        </div>
+    </div>
+</body>

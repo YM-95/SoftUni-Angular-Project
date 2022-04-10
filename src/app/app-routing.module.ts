@@ -1,19 +1,32 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeViewComponent } from './home-view/home-view.component';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
-import { LoginComponent } from './login/login.component'
-import { RegisterComponent } from './register/register.component';
+import { HomeViewComponent } from './shared/home-view/home-view.component';
+
+import { ContactComponent } from './core/contact/contact.component';
+import { LoginComponent } from './User/login/login.component'
+import { RegisterComponent } from './User/register/register.component';
+import { CatalogComponent } from './shared/catalog/catalog.component';
+import { CreateComponent } from './CRUD/create/create.component';
+import { EditComponent } from './CRUD/edit/edit.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeViewComponent },
-  { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  {
+    path: 'catalog', component: CatalogComponent,
+    // children: [
+    //   {
+    //     path: 'create',
+    //     component: CreateComponent
+    //   }],
+  },
+  { path: 'catalog/create', component: CreateComponent },
+  { path: 'catalog/edit/:id', component: EditComponent }
+
 ];
 
 @NgModule({
