@@ -20,7 +20,7 @@
             </div>
             <div class="text-end" *ngIf="AuthService.userData">
                 <h5>{{AuthService.userData.email}}</h5>
-                <button class="btn btn-warning" (click)="logout()">Logout</button>
+                <a> <button class="btn btn-warning" (click)="logout()">Logout</button></a>
             </div>
         </div>
     </div>

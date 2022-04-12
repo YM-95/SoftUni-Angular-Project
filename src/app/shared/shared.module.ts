@@ -6,10 +6,12 @@ import { HomeViewComponent } from './home-view/home-view.component';
 import { CreateComponent } from '../CRUD/create/create.component'
 import { Router } from '@angular/router';
 import { EditComponent } from '../CRUD/edit/edit.component';
+import { DetailsComponent } from './details/details.component';
 
 
 @NgModule({
   declarations: [
+
   ],
   imports: [
     CommonModule,

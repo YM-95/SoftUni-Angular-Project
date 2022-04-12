@@ -12,6 +12,7 @@ import { RegisterComponent } from './User/register/register.component';
 import { CreateComponent } from './CRUD/create/create.component';
 import { EditComponent } from './CRUD/edit/edit.component';
 import { CatalogComponent } from './shared/catalog/catalog.component';
+import { DetailsComponent } from './shared/details/details.component';
 //Bootstrap Module
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeViewComponent } from './shared/home-view/home-view.component';
@@ -40,7 +41,8 @@ import { CRUDService } from './CRUD/crud.service';
     HomeViewComponent,
     CatalogComponent,
     CreateComponent,
-    EditComponent
+    EditComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
+import { AngularFireAction, AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Card } from '../interface/product-card';
 import { User } from '../interface/user';
 
@@ -34,12 +34,39 @@ export class CRUDService {
   // }
 
   itemsCollection: AngularFireList<Card[]> | undefined
-
+  singleItem: Observable<Card> | undefined
   constructor(public db: AngularFireDatabase) { }
 
   getItems(): Observable<Card[]> {
-    return this.db.list<Card>('/listings').valueChanges();
+    return this.db.list<Card>('/listings').snapshotChanges().pipe(
+      map((changes: any[]) =>
+        changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
+      )
+    );
   }
+
+  // getSingleItem(id: string) {
+  //   this.db.database.ref('/listings/' + id).get().then(res => {
+  //     if (res) {
+  //       this.singleItem = res.val()
+  //     } else {
+  //       alert('This item not exist in Database!')
+  //     }
+  //   })
+  //   return this.singleItem
+  // }
+
+  getSingleItem(id: string) {
+    this.db.database.ref('/listings/' + id).on('value', snapshot => {
+      if (snapshot) {
+        this.singleItem = snapshot.val()
+      } else {
+        alert('This item not exist in Database!')
+      }
+    })
+    return this.singleItem
+  }
+
 }
 
 

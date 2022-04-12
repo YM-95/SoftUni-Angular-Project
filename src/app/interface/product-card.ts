@@ -1,5 +1,5 @@
 export interface Card {
-    $key: string;
+    key: string;
     title: string;
     type: string;
     image?: string;

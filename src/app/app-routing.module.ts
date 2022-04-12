@@ -9,6 +9,8 @@ import { RegisterComponent } from './User/register/register.component';
 import { CatalogComponent } from './shared/catalog/catalog.component';
 import { CreateComponent } from './CRUD/create/create.component';
 import { EditComponent } from './CRUD/edit/edit.component';
+import { DetailsComponent } from './shared/details/details.component';
+import { NotFoundComponent } from './core/not-found/not-found.component';
 
 
 const routes: Routes = [
@@ -25,8 +27,9 @@ const routes: Routes = [
     //   }],
   },
   { path: 'catalog/create', component: CreateComponent },
-  { path: 'catalog/edit/:id', component: EditComponent }
-
+  { path: 'catalog/edit/:id', component: EditComponent },
+  { path: 'catalog/:id', component: DetailsComponent },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({

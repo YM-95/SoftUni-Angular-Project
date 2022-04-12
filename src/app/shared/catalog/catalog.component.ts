@@ -7,6 +7,7 @@ import { Card } from '../../interface/product-card'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/User/auth.service';
 
 @Component({
   selector: 'app-catalog',
@@ -16,14 +17,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CatalogComponent implements OnInit {
 
 
-  users: Card[] = [];
+  items: Card[] = [];
 
-  constructor(public CRUD: CRUDService) {
+  constructor(public CRUD: CRUDService, public authService: AuthService) {
 
     this.CRUD.getItems().subscribe(user => {
-      user.forEach((user: Card) => this.users.push(user))
+      user.forEach((user: Card) => this.items.push(user))
     })
-    console.log(this.users);
+    console.log(this.items);
   }
 
   ngOnInit() { }

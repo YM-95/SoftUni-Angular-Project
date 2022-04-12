@@ -14,7 +14,7 @@ import { CRUDService } from '../crud.service';
 export class CreateComponent implements OnInit {
 
   model: Card = {
-    $key: '',
+    key: '',
     title: '',
     type: '',
     price: '',
