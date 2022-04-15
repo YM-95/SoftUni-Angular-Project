@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAction, AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+
+import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { Router } from '@angular/router';
 import { map, Observable } from 'rxjs';
 import { Card } from '../interface/product-card';
@@ -12,30 +14,10 @@ import { User } from '../interface/user';
 
 export class CRUDService {
 
-  // itemsCollection: AngularFirestoreCollection<User>;
-  // items: Observable<User[]>;
-
-  // constructor(public afs: AngularFirestore, public router: Router) {
-  // this.itemsCollection = this.afs.collection<any>('users')
-  // this.items = this.itemsCollection.valueChanges();
-  // }
-  // getItems() {
-  //   return this.items
-  // }
-
-  // addItems(data: Card) {
-  //   this.afs.collection('movies')
-  //     .add(data)
-  //     .then(() => {
-  //       this.router.navigate(['/catalog']);
-  //     }).catch(error => {
-  //       window.alert(error.message)
-  //     });
-  // }
-
   itemsCollection: AngularFireList<Card[]> | undefined
   singleItem: Observable<Card> | undefined
-  constructor(public db: AngularFireDatabase) { }
+  folder: any;
+  constructor(public db: AngularFireDatabase, public router: Router, public storage: AngularFireStorage) { }
 
   getItems(): Observable<Card[]> {
     return this.db.list<Card>('/listings').snapshotChanges().pipe(
@@ -44,17 +26,6 @@ export class CRUDService {
       )
     );
   }
-
-  // getSingleItem(id: string) {
-  //   this.db.database.ref('/listings/' + id).get().then(res => {
-  //     if (res) {
-  //       this.singleItem = res.val()
-  //     } else {
-  //       alert('This item not exist in Database!')
-  //     }
-  //   })
-  //   return this.singleItem
-  // }
 
   getSingleItem(id: string) {
     this.db.database.ref('/listings/' + id).on('value', snapshot => {
@@ -67,7 +38,24 @@ export class CRUDService {
     return this.singleItem
   }
 
+  addItem(item: any) {
+    this.db.database.ref('/listings').push(item)
+    this.storage.upload('images/', item.image)
+    this.router.navigate(['user-colection'])
+  }
+
+
+  updateItem(id: string, item: Card) {
+    this.db.database.ref('/listings/' + id).update(item)
+    this.router.navigate(['user-colection'])
+  }
+
+  deleteItem(id: string) {
+    this.db.database.ref('/listings/' + id).remove()
+    this.router.navigate(['user-colection'])
+  }
+
+
+
+
 }
-
-
-

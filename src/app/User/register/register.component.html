@@ -38,23 +38,23 @@
 <body>
     <div class="container">
         <header>Register Form</header>
-        <form>
+        <form (ngSubmit)="submit()">
             <!-- <div class="form-group">
                 <input type="text">
                 <label>Username</label>
             </div> -->
+
             <div class="form-group">
-                <input type="email" #userEmail required>
+                <input type="email" name="email" [(ngModel)]="model.email" required>
                 <label>Email</label>
             </div>
             <div class="form-group">
-                <input class="pswrd" type="password" #userPassword required>
-                <span class="show">SHOW</span>
+                <input class="pswrd" type="password" name="password" [(ngModel)]="model.password" required>
                 <label>Password</label>
             </div>
             <div class="button">
                 <div class="inner"></div>
-                <button (click)="authService.SignUp(userEmail.value, userPassword.value)">Register</button>
+                <button>Register</button>
             </div>
         </form>
         <div class="auth">

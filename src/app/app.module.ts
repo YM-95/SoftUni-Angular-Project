@@ -29,6 +29,8 @@ import { environment } from '../environments/environment';
 //Service
 import { AuthService } from './User/auth.service';
 import { CRUDService } from './CRUD/crud.service';
+import { UserColectionComponent } from './User/user-colection/user-colection.component';
+import { UserProfileComponent } from '../app/User/user-profile/user-profile.component';
 
 
 
@@ -42,7 +44,9 @@ import { CRUDService } from './CRUD/crud.service';
     CatalogComponent,
     CreateComponent,
     EditComponent,
-    DetailsComponent
+    DetailsComponent,
+    UserProfileComponent,
+    UserColectionComponent,
   ],
   imports: [
     BrowserModule,

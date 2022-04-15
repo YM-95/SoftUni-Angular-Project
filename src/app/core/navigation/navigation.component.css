@@ -1,4 +1,9 @@
-/* header {
-    background: -webkit-linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff);
+header {
+    background: -webkit-linear-gradient(right, #00dbde, #431944, #00dbde, #cba4cc);
 
-} */
+}
+
+.logo-img {
+    height: 40px;
+    width: 40px;
+}

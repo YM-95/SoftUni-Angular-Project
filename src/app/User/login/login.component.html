@@ -24,19 +24,19 @@
 <body>
     <div class="container">
         <header>Login Form</header>
-        <form class="signin">
+        <form class="signin" (ngSubmit)="submit(userEmail.value, userPassword.value)">
             <div class="formGroup">
-                <input type="text" #userEmail required>
+                <input type="email" #userEmail name="email" required>
                 <label>Email</label>
             </div>
             <div class="formGroup">
-                <input class="pswrd" type="password" #userPassword required>
+                <input class="pswrd" type="password" #userPassword name="password" required>
                 <span class="show">SHOW</span>
                 <label>Password</label>
             </div>
             <div class="button">
                 <div class="inner"></div>
-                <button (click)="authService.SignIn(userEmail.value,userPassword.value)">LOGIN</button>
+                <button>LOGIN</button>
             </div>
         </form>
         <div class=" auth">

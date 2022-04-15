@@ -1,15 +1,27 @@
-<button class="btn btn-secondary" routerLink="/catalog">Go Back</button>
-<br>
-<div class=".page-header">
-    <h2>{{item.title}}<small>{{item.city}}</small></h2>
-</div>
-<div class="row">
-    <div class=".col-md-4">Image Here</div>
+<div class="container">
+    <button routerLink="/catalog">Go Back</button>
+    <br>
+    <div>
+        <h2 class="page-header justify-content-center border-bottom pb-3 mb-3">{{item.title}}
+            <small>{{item.city}}</small>
+        </h2>
+        <div class="row">
+            <div class="col-md-4">
+                <img style="width:100%" class="thumbnail" src={{item.image}}>
+            </div>
 
-    <div class=".col-md-8">
-        <ul class="list-group">
-            <li class="list-group-item">Owner:{{item.owner}}</li>
-        </ul>
+            <div class="col-md-8">
+                <ul class="list-group">
+                    <li class="list-group-item">Owner: <strong>{{item.owner}}</strong></li>
+                    <li class="list-group-item">Bedrooms: <strong>{{item.bedrooms}}</strong></li>
+                    <li class="list-group-item">Type: <strong>{{item.type}}</strong></li>
+                    <li class="list-group-item">Price:<strong>{{item.price}}</strong> </li>
+                </ul>
+                <!-- <button *ngIf="authService.userData" class="btn btn-primary " [routerLink]="['/edit/'+id]">Edit</button>
+                <button *ngIf="authService.userData" class="btn btn-danger"
+                    (click)="CRUD.deleteItem(id)">Delete</button> -->
+            </div>
+        </div>
     </div>
 
 </div>

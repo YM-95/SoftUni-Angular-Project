@@ -23,31 +23,17 @@ export class RegisterComponent implements OnInit {
 
 
   // register(email: string, password: string) {
-  //   this.authService.SignIn(email, password)
+  //  
   // }
 
-  // model: User = {
-  //   id: '',
-  //   username: '',
-  //   email: '',
-  //   password: '',
-  //   repass: '',
-  // };
+  model: User = {
+    uid: '',
+    displayName: '',
+    email: '',
+    password: '',
+  };
 
-  // Subjects: string[] = [
-  //   'Science',
-  //   'Math',
-  //   'Physics',
-  //   'Finance'
-  // ];
-
-  // submit(data: User) {
-  //   this.firestore.collection('users')
-  //     .add(data)
-  //     .then(() => {
-  //       this.router.navigate(['/']);
-  //     }).catch(error => {
-  //       window.alert(error.message)
-  //     });
-  // }
+  submit() {
+    this.authService.SignUp(this.model.email, this.model.password)
+  }
 }

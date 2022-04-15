@@ -11,6 +11,9 @@ import { CreateComponent } from './CRUD/create/create.component';
 import { EditComponent } from './CRUD/edit/edit.component';
 import { DetailsComponent } from './shared/details/details.component';
 import { NotFoundComponent } from './core/not-found/not-found.component';
+import { UserGuard } from './Guards/user.guard';
+import { UserProfileComponent } from './User/user-profile/user-profile.component';
+import { UserColectionComponent } from './User/user-colection/user-colection.component';
 
 
 const routes: Routes = [
@@ -26,9 +29,11 @@ const routes: Routes = [
     //     component: CreateComponent
     //   }],
   },
-  { path: 'catalog/create', component: CreateComponent },
-  { path: 'catalog/edit/:id', component: EditComponent },
+  { path: 'create', component: CreateComponent, canActivate: [UserGuard] },
+  { path: 'edit/:id', component: EditComponent },
   { path: 'catalog/:id', component: DetailsComponent },
+  { path: 'user-profile', component: UserProfileComponent, canActivate: [UserGuard] },
+  { path: 'user-colection', component: UserColectionComponent, canActivate: [UserGuard] },
   { path: '**', component: NotFoundComponent },
 ];
 

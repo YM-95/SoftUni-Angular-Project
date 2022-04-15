@@ -1,1 +1,41 @@
-<p>edit works!</p>
+<body>
+    <div class="container" (submit)="onSubmit()">
+        <header>Edit Form</header>
+        <form #myForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <input type="text" class="form-control" name="name" [(ngModel)]="model.title">
+                <label>Name</label>
+            </div>
+
+            <div class="form-group">
+
+                <input type="text" class="form-control" name="details" [(ngModel)]="model.type">
+                <label>Type</label>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="price" [(ngModel)]="model.price">
+                <label>Price</label>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="city" [(ngModel)]="model.city">
+                <label>City</label>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="owner" [(ngModel)]="model.owner">
+                <label>Owner</label>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="bedrooms" [(ngModel)]="model.bedrooms" required>
+                <label>Bedrooms</label>
+            </div>
+            <div class="form-group">
+                <input type="file" class="form-control" name="image" [(ngModel)]="model.image">
+            </div>
+            <div class="button">
+                <div class="inner"></div>
+                <button>Update</button>
+            </div>
+        </form>
+    </div>
+</body>

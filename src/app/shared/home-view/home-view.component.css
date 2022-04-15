@@ -30,6 +30,8 @@ mat-toolbar {
 	height: calc(100vh - 64px);
 	padding-top: 10%;
 	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 .btn {

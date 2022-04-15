@@ -12,7 +12,7 @@ import { AuthService } from '../../User//auth.service'
 export class NavigationComponent implements OnInit {
 
 
-  user!: firebase.User;
+  user?: firebase.User;
 
   constructor(public AuthService: AuthService, public afAuth: AngularFireAuth) {
     this.afAuth.authState.subscribe((result) => {

@@ -1,12 +1,12 @@
-<header class="p-4 bg-dark text-white">
+<header class="p-4 bg-info text-white">
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a routerLink="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                <span class="navbar-brand mb-0 h1">Logo</span>
+                <span class="navbar-brand mb-0 h1"><img class="logo-img" src="/assets/house.png"></span>
             </a>
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li><a routerLink="/" class="nav-link px-2 text-white">Home</a></li>
-                <li><a routerLink="" class="nav-link px-2 text-white">MyProfile</a></li>
+
                 <li><a routerLink="catalog" class="nav-link px-2 text-white">Catalog</a></li>
             </ul>
 
@@ -16,12 +16,21 @@
 
             <div class="text-end" *ngIf="!AuthService.userData">
                 <button type="button" class="btn btn-outline-light me-2" routerLink="/login">Login</button>
-                <button type="button" class="btn btn-warning" routerLink="/register">Sign-up</button>
+                <button type="button" class="btn btn-success" routerLink="/register">Sign-up</button>
             </div>
+
             <div class="text-end" *ngIf="AuthService.userData">
+                <button type="button" class="btn btn-primary btn-sm" routerLink="/user-profile">MyProfile</button>
+                <button type="button" class="btn btn-primary btn-sm" routerLink="/user-colection">MyColection</button>
+                <button routerLink="create" class="btn btn-secondary btn-sm ">Add Post</button>
                 <h5>{{AuthService.userData.email}}</h5>
                 <a> <button class="btn btn-warning" (click)="logout()">Logout</button></a>
             </div>
+
         </div>
     </div>
 </header>
+<!-- <div class="alert alert-success alert-dismissable" *ngIf="AuthService.userData">
+    <button class="close" data-dismiss="alert" aria-label="close">×</button>
+    <strong>Success!</strong>
+</div> -->

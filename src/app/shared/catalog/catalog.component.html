@@ -1,36 +1,24 @@
-<button routerLink="create" class="btn btn-secondary btn-lg">Create New</button>
-
 <div *ngIf="items.length>0">
-    <div class="album py-5">
-        <div class="container">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <div class="col">
-                    <div class="card" *ngFor="let item of items">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">{{item.owner}}</text>
-                        </svg>
-
-                        <div class="card-body">
-                            <a [routerLink]="['/catalog/'+item.key]">
-                                {{item.title}}
-                            </a>
-
-                            <p class="card-text">{{item.price}}</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button *ngIf="authService.userData" routerLink="edit:id"
-                                        class="btn btn-sm btn-outline-secondary">Edit</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="card" *ngFor="let item of items" style="width: 22rem;" [routerLink]="['/catalog/'+item.key]">
+        <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{item.title}}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <button type="button" [routerLink]="['/catalog/'+item.key]"
+                class="btn btn-sm btn-outline-secondary">Details</button>
         </div>
     </div>
 </div>
+
+<ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+        <a class="page-link" href="#">Next</a>
+    </li>
+</ul>

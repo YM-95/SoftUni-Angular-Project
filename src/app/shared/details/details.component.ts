@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CRUDService } from 'src/app/CRUD/crud.service';
+import { AuthService } from 'src/app/User/auth.service';
 
 @Component({
   selector: 'app-details',
@@ -11,7 +12,7 @@ export class DetailsComponent implements OnInit {
   id: any;
   item: any;
 
-  constructor(public CRUD: CRUDService, public router: Router, public route: ActivatedRoute) { }
+  constructor(public CRUD: CRUDService, public router: Router, public route: ActivatedRoute, public authService: AuthService) { }
 
 
 
