@@ -14,18 +14,18 @@ export class NavigationComponent implements OnInit {
 
   user?: firebase.User;
 
-  constructor(public AuthService: AuthService, public afAuth: AngularFireAuth) {
+  constructor(public AuthService: AuthService, public afAuth: AngularFireAuth) { }
+
+  logout() {
+    this.AuthService.SignOut()
+  }
+
+  ngOnInit(): void {
     this.afAuth.authState.subscribe((result) => {
       if (result) {
         this.user = result;
       }
     });
   }
-
-  logout() {
-    this.AuthService.SignOut()
-  }
-
-  ngOnInit(): void { }
 
 }

@@ -39,17 +39,13 @@
     <div class="container">
         <header>Register Form</header>
         <form (ngSubmit)="submit()">
-            <!-- <div class="form-group">
-                <input type="text">
-                <label>Username</label>
-            </div> -->
-
             <div class="form-group">
                 <input type="email" name="email" [(ngModel)]="model.email" required>
                 <label>Email</label>
             </div>
             <div class="form-group">
-                <input class="pswrd" type="password" name="password" [(ngModel)]="model.password" required>
+                <input class="pswrd" type="password" name="password" minlength="6" [(ngModel)]="model.password"
+                    required>
                 <label>Password</label>
             </div>
             <div class="button">
@@ -61,9 +57,6 @@
             Or login with
         </div>
         <div class="links">
-            <div class="facebook">
-                <i class="fab fa-facebook-square"><span>Facebook</span></i>
-            </div>
             <div class="google">
                 <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
                     <i class="fab fa-google-plus-square"><span>Google</span></i>
@@ -71,7 +64,7 @@
             </div>
         </div>
         <div class="signup">
-            If you allready got account. <a href="/login">Login here</a>
+            If you allready got account. <a routerLink="/login">Login here</a>
         </div>
     </div>
 </body>

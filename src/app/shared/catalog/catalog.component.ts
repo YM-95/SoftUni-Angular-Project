@@ -19,14 +19,12 @@ export class CatalogComponent implements OnInit {
 
   items: Card[] = [];
 
-  constructor(public CRUD: CRUDService, public authService: AuthService) {
+  constructor(public CRUD: CRUDService, public authService: AuthService) { }
 
+  ngOnInit() {
     this.CRUD.getItems().subscribe(user => {
       user.forEach((user: Card) => this.items.push(user))
     })
-    console.log(this.items);
   }
-
-  ngOnInit() { }
 
 }

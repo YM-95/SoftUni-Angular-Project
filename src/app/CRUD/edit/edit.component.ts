@@ -22,14 +22,13 @@ export class EditComponent implements OnInit {
     bedrooms: '',
     image: '',
   };
-  constructor(public route: ActivatedRoute, public CRUD: CRUDService) {
+
+  constructor(public route: ActivatedRoute, public CRUD: CRUDService) { }
+
+  ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.id = params["id"]
     });
-
-  }
-
-  ngOnInit(): void {
     this.model = this.CRUD.getSingleItem(this.id)
   };
 

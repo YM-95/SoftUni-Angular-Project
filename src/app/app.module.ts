@@ -31,6 +31,7 @@ import { AuthService } from './User/auth.service';
 import { CRUDService } from './CRUD/crud.service';
 import { UserColectionComponent } from './User/user-colection/user-colection.component';
 import { UserProfileComponent } from '../app/User/user-profile/user-profile.component';
+import { UserEditComponent } from './User/user-edit/user-edit.component';
 
 
 
@@ -47,6 +48,7 @@ import { UserProfileComponent } from '../app/User/user-profile/user-profile.comp
     DetailsComponent,
     UserProfileComponent,
     UserColectionComponent,
+    UserEditComponent,
   ],
   imports: [
     BrowserModule,

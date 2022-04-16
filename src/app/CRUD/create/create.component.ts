@@ -27,8 +27,7 @@ export class CreateComponent implements OnInit {
 
   constructor(public CRUD: CRUDService, public firestore: AngularFirestore, public router: Router, public authService: AuthService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 
   submit() {

@@ -15,11 +15,15 @@ export class UserColectionComponent implements OnInit {
   constructor(public CRUD: CRUDService, public authService: AuthService) {
 
     this.CRUD.getItems().subscribe(user => {
-      user.forEach((user: Card) => this.items.push(user))
+      user.forEach((user: Card) => {
+        if (user.postOwner == authService.userData.uid) {
+          this.items.push(user)
+        }
+      })
     })
-    console.log(this.items);
   }
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void { }
 }
+
+
+
